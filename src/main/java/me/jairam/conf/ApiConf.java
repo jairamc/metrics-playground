@@ -1,4 +1,4 @@
-package com.meltwater.wrapidity.conf;
+package me.jairam.conf;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;

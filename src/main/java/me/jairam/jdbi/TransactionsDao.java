@@ -1,6 +1,6 @@
-package com.meltwater.wrapidity.jdbi;
+package me.jairam.jdbi;
 
-import com.meltwater.wrapidity.api.Transaction;
+import me.jairam.api.Transaction;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;

@@ -1,9 +1,9 @@
-package com.meltwater.wrapidity;
+package me.jairam;
 
 
-import com.meltwater.wrapidity.conf.ApiConf;
-import com.meltwater.wrapidity.jdbi.TransactionsDao;
-import com.meltwater.wrapidity.resources.TransactionResource;
+import me.jairam.conf.ApiConf;
+import me.jairam.jdbi.TransactionsDao;
+import me.jairam.resources.TransactionResource;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;

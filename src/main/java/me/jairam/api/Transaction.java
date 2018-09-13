@@ -1,4 +1,4 @@
-package com.meltwater.wrapidity.api;
+package me.jairam.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotEmpty;

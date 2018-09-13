@@ -1,4 +1,4 @@
-package com.meltwater.wrapidity.logging;
+package me.jairam.logging;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;

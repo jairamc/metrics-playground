@@ -1,8 +1,8 @@
-package com.meltwater.wrapidity.resources;
+package me.jairam.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.meltwater.wrapidity.api.Transaction;
-import com.meltwater.wrapidity.jdbi.TransactionsDao;
+import me.jairam.api.Transaction;
+import me.jairam.jdbi.TransactionsDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
