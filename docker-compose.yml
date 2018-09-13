@@ -1,0 +1,46 @@
+version: '3'
+services:
+#  metrics:
+#    image: kamon/grafana_graphite
+#    ports:
+#      - '80:80'
+#      - '81:81'
+#      - '8125:8125/udp'
+#      - '8126:8126'
+#      - '2003:2003'
+#    volumes:
+#      - ./data/whisper:/opt/graphite/storage/whisper
+#      - ./data/grafana:/opt/grafana/data
+#      - ./log/graphite:/opt/graphite/storage/log
+#      - ./log/supervisor:/var/log/supervisor
+
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_DATABASE: wrtystore
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_user_supersecret
+    volumes:
+      - "./sql:/docker-entrypoint-initdb.d"
+
+  api:
+    image: wrapidity/metrics-playground:1.0-SNAPSHOT
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      DB_DRIVER: com.mysql.cj.jdbc.Driver
+      DB_URL: jdbc:mysql://db/wrtystore
+      DB_USER: app_user
+      DB_PASSWORD: app_user_supersecret
+      METRICS_HOST: metrics
+      METRICS_PORT: 2003
+    volumes:
+      - "./config:/maven/config"
+    depends_on:
+      - db
+      - logs
